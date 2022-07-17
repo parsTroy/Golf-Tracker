@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Score</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label class="labels" id="parLbl">Par</label>
+            <label class="labels" id="strokeLbl">Stroke</label>
+        </div>
+        <div>
+            <input id="holePar" type="text">
+            <input id="holeStroke" type="text">
+        </div>
+        <p id="scoreTxt">Score Here:</p>
+        <button id="scoreBtn" onclick="setValues()">Click!</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
