@@ -6,6 +6,7 @@ const strokeLbl = document.querySelector("#strokeLbl");
 const holePar = document.querySelector("#holePar");
 const holeStroke = document.querySelector("#holeStroke");
 
+let holeNum = 1;
 let par;
 let strokes;
 
@@ -40,3 +41,48 @@ function setValues() {
       }
       scoreRun(par, strokes);
 }
+
+var table = document.createElement('table');
+table.classList.add('table');
+
+var thead = document.createElement('thead');
+var headRow = document.createElement('tr');
+var columnNames = ["Hole", "Strokes"];
+
+for (var i = 0; i < 2; i++) {
+  var th = document.createElement('th');
+  th.appendChild(document.createTextNode(columnNames[i]));
+  headRow.appendChild(th);
+}
+
+thead.appendChild(headRow);
+
+var tbody = document.createElement('tbody');
+
+for (var i = 0; i < 18; i++) {
+  var tr = document.createElement('tr');
+
+  for (var j = 0; j < 2; j++) {
+    var td = document.createElement('td');
+
+    if (j == 1) {
+      td.classList.add("input");
+      var input = document.createElement('input');
+      input.type = "text";
+      td.appendChild(input);
+      tr.appendChild(td);
+      input.style.width = "25px";
+      input.style.backgroundColor = "rgb(171, 182, 178)";
+      continue;
+    }
+
+    td.appendChild(document.createTextNode(holeNum++));
+    tr.appendChild(td);
+  }
+
+  tbody.appendChild(tr);
+}
+
+table.appendChild(thead);
+table.appendChild(tbody);
+document.body.appendChild(table)
