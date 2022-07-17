@@ -5,6 +5,7 @@ const parLbl = document.querySelector("#parLbl");
 const strokeLbl = document.querySelector("#strokeLbl");
 const holePar = document.querySelector("#holePar");
 const holeStroke = document.querySelector("#holeStroke");
+const nightBtn = document.getElementById("dnBtn");
 
 let holeNum = 1;
 let par;
