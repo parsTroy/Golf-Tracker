@@ -6,18 +6,57 @@ const strokeLbl = document.querySelector("#strokeLbl");
 const holePar = document.querySelector("#holePar");
 const holeStroke = document.querySelector("#holeStroke");
 const nightBtn = document.getElementById("dnBtn");
+const holeOne = document.querySelector(".hole-one");
+const holeTwo = document.querySelector(".hole-two");
+const holeThree = document.querySelector(".hole-three");
+const holeFour = document.querySelector(".hole-four");
+const holeFive = document.querySelector(".hole-five");
+const holeSix = document.querySelector(".hole-six");
+const holeSeven = document.querySelector(".hole-seven");
+const holeEight = document.querySelector(".hole-eight");
+const holeNine = document.querySelector(".hole-nine");
+const holeTen = document.querySelector(".hole-ten");
+const holeEleven = document.querySelector(".hole-eleven");
+const holeTwelve = document.querySelector(".hole-twelve");
+const holeThirteen = document.querySelector(".hole-thirteen");
+const holeFourteen = document.querySelector(".hole-fourteen");
+const holeFifteen = document.querySelector(".hole-fifteen");
+const holeSixteen = document.querySelector(".hole-sixteen");
+const holeSeventeen = document.querySelector(".hole-seventeen");
+const holeEighteen = document.querySelector(".hole-eighteen");
+const scoreOne = document.querySelector(".score-one");
+const scoreTwo = document.querySelector(".score-two");
+const scoreThree = document.querySelector(".score-three");
+const scoreFour = document.querySelector(".score-four");
+const scoreFive = document.querySelector(".score-five");
+const scoreSix = document.querySelector(".score-six");
+const scoreSeven = document.querySelector(".score-seven");
+const scoreEight = document.querySelector(".score-eight");
+const scoreNine = document.querySelector(".score-nine");
+const scoreTen = document.querySelector(".score-ten");
+const scoreEleven = document.querySelector(".score-eleven");
+const scoreTwelve = document.querySelector(".score-twelve");
+const scoreThirteen = document.querySelector(".score-thirteen");
+const scoreFourteen = document.querySelector(".score-fourteen");
+const scoreFifteen = document.querySelector(".score-fifteen");
+const scoreSixteen = document.querySelector(".score-sixteen");
+const scoreSeventeen = document.querySelector(".score-seventeen");
+const scoreEighteen = document.querySelector(".score-eighteen");
+const dnBtn = document.querySelector("#dnBtn");
+const bgDiv = document.querySelector(".container");
 
-let holeNum = 1;
+let bgState = 1;
 let par;
 let strokes;
+let holeScore = "";
 
-function setValues() {
+function checkValues() {
 
     par = holePar.value;
     strokes = holeStroke.value;
 
-    par = Number(par)
-    strokes = Number(strokes)
+    par = Number(par);
+    strokes = Number(strokes);
 
     function scoreRun(par, strokes) {
         if (!par || !strokes) {
@@ -40,50 +79,181 @@ function setValues() {
           return scoreTxt.textContent = `Pack up and ${scores[7]}`;
         }
       }
+
       scoreRun(par, strokes);
 }
 
-var table = document.createElement('table');
-table.classList.add('table');
+function setValues() {
+    par = holePar.value;
+    strokes = holeStroke.value;
 
-var thead = document.createElement('thead');
-var headRow = document.createElement('tr');
-var columnNames = ["Hole", "Strokes"];
+    par = Number(par);
+    strokes = Number(strokes);
 
-for (var i = 0; i < 2; i++) {
-  var th = document.createElement('th');
-  th.appendChild(document.createTextNode(columnNames[i]));
-  headRow.appendChild(th);
-}
+    function scoreRun(par, strokes) {
+        if (!par || !strokes) {
+            return scoreTxt.textContent = "Missing or Invalid Values!";
+        } else if (strokes == 1) {
+            holeScore = scores[0];
+            scoreTxt.textContent = `You got a ${scores[0]}!`;
+        } else if (strokes <= par -3) {
+            holeScore = scores[1];
+            scoreTxt.textContent = `You got a ${scores[1]}!`;
+        } else if (strokes <= par -2) {
+            holeScore = scores[2];
+            scoreTxt.textContent = `You got an ${scores[2]}!`;
+        } else if (strokes == par -1) {
+            holeScore = scores[3];
+            scoreTxt.textContent = `You got a ${scores[3]}!`;
+        } else if (strokes === par) {
+            holeScore = scores[4];
+            scoreTxt.textContent = `You're on ${scores[4]}!`;
+        } else if (strokes == par + 1) {
+            holeScore = scores[5];
+            scoreTxt.textContent = `That's a ${scores[5]}!`;
+        } else if (strokes == par + 2) {
+            holeScore = scores[6];
+            scoreTxt.textContent = `That's a ${scores[6]}!`;
+        } else if (strokes >= par + 3) {
+            holeScore = scores[7];
+            scoreTxt.textContent = `Pack up and ${scores[7]}`;
+        }
+      }
 
-thead.appendChild(headRow);
+      scoreRun(par, strokes);
 
-var tbody = document.createElement('tbody');
+    if(holeOne.textContent === '-'){
+      holeOne.textContent = strokes;
+      scoreOne.textContent = holeScore;
 
-for (var i = 0; i < 18; i++) {
-  var tr = document.createElement('tr');
+    } else if(holeOne.textContent >= 1 && holeTwo.textContent === '-') {
+      holeTwo.textContent = strokes;
+      scoreTwo.textContent = holeScore;
 
-  for (var j = 0; j < 2; j++) {
-    var td = document.createElement('td');
+    } else if(holeTwo.textContent >= 1 && holeThree.textContent === '-') {
+      holeThree.textContent = strokes;
+      scoreThree.textContent = holeScore;
 
-    if (j == 1) {
-      td.classList.add("input");
-      var input = document.createElement('input');
-      input.type = "text";
-      td.appendChild(input);
-      tr.appendChild(td);
-      input.style.width = "25px";
-      input.style.backgroundColor = "rgb(171, 182, 178)";
-      continue;
+    } else if(holeThree.textContent >= 1 && holeFour.textContent === '-') {
+      holeFour.textContent = strokes;
+      scoreFour.textContent = holeScore;
+
+    } else if(holeFour.textContent >= 1 && holeFive.textContent === '-') {
+      holeFive.textContent = strokes;
+      scoreFive.textContent = holeScore;
+
+    } else if(holeFive.textContent >= 1 && holeSix.textContent === '-') {
+      holeSix.textContent = strokes;
+      scoreSix.textContent = holeScore;
+
+    } else if(holeSix.textContent >= 1 && holeSeven.textContent === '-') {
+      holeSeven.textContent = strokes;
+      scoreSeven.textContent = holeScore;
+
+    } else if(holeSeven.textContent >= 1 && holeEight.textContent === '-') {
+      holeEight.textContent = strokes;
+      scoreEight.textContent = holeScore;
+
+    } else if(holeEight.textContent >= 1 && holeNine.textContent === '-') {
+      holeNine.textContent = strokes;
+      scoreNine.textContent = holeScore;
+
+    } else if(holeNine.textContent >= 1 && holeTen.textContent === '-') {
+      holeTen.textContent = strokes;
+      scoreTen.textContent = holeScore;
+
+    } else if(holeTen.textContent >= 1 && holeEleven.textContent === '-') {
+      holeEleven.textContent = strokes;
+      scoreEleven.textContent = holeScore;
+
+    } else if(holeEleven.textContent >= 1 && holeTwelve.textContent === '-') {
+      holeTwelve.textContent = strokes;
+      scoreTwelve.textContent = holeScore;
+
+    } else if(holeTwelve.textContent >= 1 && holeThirteen.textContent === '-') {
+      holeThirteen.textContent = strokes;
+      scoreThirteen.textContent = holeScore;
+
+    } else if(holeThirteen.textContent >= 1 && holeFourteen.textContent === '-') {
+      holeFourteen.textContent = strokes;
+      scoreFourteen.textContent = holeScore;
+
+    } else if(holeFourteen.textContent >= 1 && holeFifteen.textContent === '-') {
+      holeFifteen.textContent = strokes;
+      scoreFifteen.textContent = holeScore;
+
+    } else if(holeFifteen.textContent >= 1 && holeSixteen.textContent === '-') {
+      holeSixteen.textContent = strokes;
+      scoreSixteen.textContent = holeScore;
+
+    } else if(holeSixteen.textContent >= 1 && holeSeventeen.textContent === '-') {
+      holeSeventeen.textContent = strokes;
+      scoreSeventeen.textContent = holeScore;
+
+    } else{
+      holeEighteen.textContent = strokes;
+      scoreEighteen.textContent = holeScore;
+
     }
-
-    td.appendChild(document.createTextNode(holeNum++));
-    tr.appendChild(td);
-  }
-
-  tbody.appendChild(tr);
+    strokes = 0;
+    holePar.value = "";
+    holeStroke.value = "";
 }
 
-table.appendChild(thead);
-table.appendChild(tbody);
-document.body.appendChild(table)
+function resetValues() {
+  strokes = 0;
+  scoreTxt.textContent = "Score Here:";
+  holePar.value = "";
+  holeStroke.value = "";
+  holeOne.textContent = '-'
+  holeTwo.textContent = '-'
+  holeThree.textContent = '-'
+  holeFour.textContent = '-'
+  holeFive.textContent = '-'
+  holeSix.textContent = '-'
+  holeSeven.textContent = '-'
+  holeEight.textContent = '-'
+  holeNine.textContent = '-'
+  holeTen.textContent = '-'
+  holeEleven.textContent = '-'
+  holeTwelve.textContent = '-'
+  holeThirteen.textContent = '-'
+  holeFourteen.textContent = '-'
+  holeFifteen.textContent = '-'
+  holeSixteen.textContent = '-'
+  holeSeventeen.textContent = '-'
+  holeEighteen.textContent = '-'
+
+  scoreOne.textContent = '-'
+  scoreTwo.textContent = '-'
+  scoreThree.textContent = '-'
+  scoreFour.textContent = '-'
+  scoreFive.textContent = '-'
+  scoreSix.textContent = '-'
+  scoreSeven.textContent = '-'
+  scoreEight.textContent = '-'
+  scoreNine.textContent = '-'
+  scoreTen.textContent = '-'
+  scoreEleven.textContent = '-'
+  scoreTwelve.textContent = '-'
+  scoreThirteen.textContent = '-'
+  scoreFourteen.textContent = '-'
+  scoreFifteen.textContent = '-'
+  scoreSixteen.textContent = '-'
+  scoreSeventeen.textContent = '-'
+  scoreEighteen.textContent = '-'
+}
+
+function dayNight() {
+  if(bgState === 1){
+    bgDiv.style.backgroundColor = "rgba(196, 193, 194, .70)";
+    document.body.style.color = "rgb(59, 62, 61)";
+    dnBtn.style.backgroundColor = "rgb(59, 62, 61)";
+    bgState = 2;
+  } else if(bgState === 2) {
+    bgDiv.style.backgroundColor = "rgba(59, 62, 61, .70)";
+    document.body.style.color = "#ffe4c4";
+    dnBtn.style.backgroundColor = "#ffe4c4";
+    bgState = 1;
+  }
+}

@@ -6,22 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf Score</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;400;700&family=Miltonian+Tattoo&family=Press+Start+2P&family=Quicksand&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="day-night">
-            <button id="dnBtn"></button>
+    <div class="background">
+        <div class="portfolio-link">
+            <a href="https://troyparsons.ca/">
+                <button class="portfolio-btn">
+                    Portfolio
+                </button>
+            </a>
         </div>
-        <div>
-            <label class="labels" id="parLbl">Par</label>
-            <label class="labels" id="strokeLbl">Stroke</label>
+        <div class="bgOverlay">
+            <div class="container">
+                <div class="day-night">
+                    <button id="dnBtn" onclick="dayNight()"></button>
+                </div>
+                <div>
+                    <label class="labels" id="parLbl">Par</label>
+                    <label class="labels" id="strokeLbl">Stroke</label>
+                </div>
+                <div>
+                    <input id="holePar" type="text">
+                    <input id="holeStroke" type="text">
+                </div>
+                <p id="scoreTxt">Score Here:</p>
+                <button id="scoreBtn" onclick="checkValues()">Check</button>
+                <button id="submitBtn" onclick="setValues()">Submit</button>
+                <button id="resetBtn" onclick="resetValues()">Reset</button>
+                <div class="row-container">
+                    <div class="hole-rows">
+                        <div class="hole">Hole: 1</div>
+                        <div class="hole">Hole: 2</div>
+                        <div class="hole">Hole: 3</div>
+                        <div class="hole">Hole: 4</div>
+                        <div class="hole">Hole: 5</div>
+                        <div class="hole">Hole: 6</div>
+                        <div class="hole">Hole: 7</div>
+                        <div class="hole">Hole: 8</div>
+                        <div class="hole">Hole: 9</div>
+                        <div class="hole">Hole: 10</div>
+                        <div class="hole">Hole: 11</div>
+                        <div class="hole">Hole: 12</div>
+                        <div class="hole">Hole: 13</div>
+                        <div class="hole">Hole: 14</div>
+                        <div class="hole">Hole: 15</div>
+                        <div class="hole">Hole: 16</div>
+                        <div class="hole">Hole: 17</div>
+                        <div class="hole">Hole: 18</div>
+                    </div>
+                    <div class="stroke-rows">
+                        <div class="hole-one">-</div>
+                        <div class="hole-two">-</div>
+                        <div class="hole-three">-</div>
+                        <div class="hole-four">-</div>
+                        <div class="hole-five">-</div>
+                        <div class="hole-six">-</div>
+                        <div class="hole-seven">-</div>
+                        <div class="hole-eight">-</div>
+                        <div class="hole-nine">-</div>
+                        <div class="hole-ten">-</div>
+                        <div class="hole-eleven">-</div>
+                        <div class="hole-twelve">-</div>
+                        <div class="hole-thirteen">-</div>
+                        <div class="hole-fourteen">-</div>
+                        <div class="hole-fifteen">-</div>
+                        <div class="hole-sixteen">-</div>
+                        <div class="hole-seventeen">-</div>
+                        <div class="hole-eighteen">-</div>
+                    </div>
+                    <div class="stroke-score">
+                        <div class="score-one">-</div>
+                        <div class="score-two">-</div>
+                        <div class="score-three">-</div>
+                        <div class="score-four">-</div>
+                        <div class="score-five">-</div>
+                        <div class="score-six">-</div>
+                        <div class="score-seven">-</div>
+                        <div class="score-eight">-</div>
+                        <div class="score-nine">-</div>
+                        <div class="score-ten">-</div>
+                        <div class="score-eleven">-</div>
+                        <div class="score-twelve">-</div>
+                        <div class="score-thirteen">-</div>
+                        <div class="score-fourteen">-</div>
+                        <div class="score-fifteen">-</div>
+                        <div class="score-sixteen">-</div>
+                        <div class="score-seventeen">-</div>
+                        <div class="score-eighteen">-</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <input id="holePar" type="text">
-            <input id="holeStroke" type="text">
-        </div>
-        <p id="scoreTxt">Score Here:</p>
-        <button id="scoreBtn" onclick="setValues()">Click!</button>
     </div>
     <script src="index.js"></script>
 </body>

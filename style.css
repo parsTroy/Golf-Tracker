@@ -1,9 +1,51 @@
 body {
-    display: flex;
     text-align: center;
     align-items: center;
     background-color: rgb(59, 62, 61);
-    color: bisque;
+    color: #ffe4c4;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+
+.portfolio-link {
+    padding: 5px;
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.portfolio-btn {
+    border-radius: 35px;
+    border: none;
+    padding: 5px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    outline: none;
+    background-color: #1515159b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.portfolio-btn:hover {
+    background-color: #4646466b;
+}
+
+.background {
+    display: flexbox;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://source.unsplash.com/1920x1080?golfcourse);
+    filter: saturate(100%);
 }
 
 input {
@@ -13,15 +55,15 @@ input {
 
 .day-night {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    margin-top: -5px;
+    margin-left: -5px;
 }
 
 #dnBtn {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border: none;
-    border-radius: 35px;
+    border-radius: 30px;
     transform: 0.15s;
     background-color: bisque;
 }
@@ -30,58 +72,125 @@ input {
 }
 
 .container {
-    width: 100%;
-    height: 100%;
-    position:relative;
-    margin-top: 10%;
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: rgba(59, 62, 61, .80);
+    border-radius: 30px;
+    width: 650px;
+    height: 850px;
 }
 
 .labels {
-    font-size: 25px;
-    margin-left: 45px;
-    margin-right: 32px;
+    text-align: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-right: 25px;
 }
 
 #holePar,
 #holeStroke {
     width: 90px;
-    height: 30px;
-    margin: 10px;
+    height: 25px;
+    margin: 5px;
     background-color: rgb(171, 182, 178);
 }
 
 #scoreTxt {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
     font-weight: bold;
 }
 
-#scoreBtn {
-    width: 150px;
-    height: 70px;
+#scoreBtn,
+#resetBtn,
+#submitBtn {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 140px;
+    height: 60px;
     background-color: rgb(76, 94, 88);
     border: none;
     border-radius: 4px;
     color: bisque;
     transition: 0.15s;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
 }
-#scoreBtn:hover {
+#scoreBtn:hover,
+#resetBtn:hover,
+#submitBtn:hover {
     opacity: 0.9;
 }
-#scoreBtn:active {
+#scoreBtn:active,
+#resetBtn:active,
+#submitBtn:active {
     opacity: 0.7;
 }
 
-table {
-    top: 50%;
-    left: 47.5%;
+.hole,
+.hole-one,
+.hole-two,
+.hole-three,
+.hole-four,
+.hole-five,
+.hole-six,
+.hole-seven,
+.hole-eight,
+.hole-nine,
+.hole-ten,
+.hole-eleven,
+.hole-twelve,
+.hole-thirteen,
+.hole-fourteen,
+.hole-fifteen,
+.hole-sixteen,
+.hole-seventeen,
+.hole-eighteen,
+.score-one,
+.score-two,
+.score-three,
+.score-four,
+.score-five,
+.score-six,
+.score-seven,
+.score-eight,
+.score-nine,
+.score-ten,
+.score-eleven,
+.score-twelve,
+.score-thirteen,
+.score-fourteen,
+.score-fifteen,
+.score-sixteen,
+.score-seventeen,
+.score-eighteen {
+    padding: 5px;
+    font-size: 18px;
+    border: solid 1px;
+    min-width: 150px;
+    max-width: fit-content;
+    font-weight: bold;
+}
+
+.row-container{
+    display: inline-block;
     align-items: center;
     text-align: center;
-    position: fixed;
+    margin-top: 30px;
+    column-count: 3;
 }
-#stroke-table {
-    font-size: 20px;
+.hole-rows,
+.stroke-rows,
+.stroke-score {
+    align-items: center;
+    text-align: center;    
+    min-width: 100px;
+    max-width: fit-content;
 }
