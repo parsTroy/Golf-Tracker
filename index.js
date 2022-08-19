@@ -246,14 +246,22 @@ function resetValues() {
 
 function dayNight() {
   if(bgState === 1){
-    bgDiv.style.backgroundColor = "rgba(196, 193, 194, .70)";
-    document.body.style.color = "rgb(59, 62, 61)";
-    dnBtn.style.backgroundColor = "rgb(59, 62, 61)";
+    bgDiv.style.backgroundColor = "rgba(237,245,225,0.70)";
+    document.body.style.color = "#05386B";
+    dnBtn.style.backgroundColor = "#05386B";
+    holePar.style.backgroundColor = "#05386B";
+    holeStroke.style.backgroundColor = "#05386B";
+    holePar.style.color = "#EDF5E1";
+    holeStroke.style.color = "#EDF5E1";
     bgState = 2;
   } else if(bgState === 2) {
-    bgDiv.style.backgroundColor = "rgba(59, 62, 61, .70)";
-    document.body.style.color = "#ffe4c4";
-    dnBtn.style.backgroundColor = "#ffe4c4";
+    bgDiv.style.backgroundColor = "rgba(5,56,107,.80)";
+    document.body.style.color = "#EDF5E1";
+    dnBtn.style.backgroundColor = "#EDF5E1";
+    holePar.style.backgroundColor = "#EDF5E1";
+    holeStroke.style.backgroundColor = "#EDF5E1";
+    holePar.style.color = "#05386B";
+    holeStroke.style.color = "#05386B";
     bgState = 1;
   }
 }

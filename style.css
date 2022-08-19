@@ -1,137 +1,245 @@
-body {
-    text-align: center;
-    align-items: center;
-    background-color: rgb(59, 62, 61);
-    color: #ffe4c4;
+:root {
+    --clr-accent-400: #05386B;
+    --clr-accent-100: #8EE4AF;
+
+    --clr-primary-400: #5CDB95;
+
+    --clr-neutral-100: #EDF5E1;
+    --clr-neutral-900: #379683;
+
+    --ff-primary: 'Aboreto', cursive;
+    --ff-accent: 'Oleo Script Swash Caps', cursive;
+    
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-400: 1rem;
+    --fs-700: 2.5rem;
+
+    --fs-button: var(--fs-400);
+}
+
+@media (min-width: 50em) {
+    :root {
+        --fs-700: 3.5rem;
+    }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Kantumruy Pro', sans-serif;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.text-primary-400 {
+    color: var(--clr-primary-400);
+}
+.text-accent-400 {
+    color: var(--clr-accent-400);
+}
+.text-accent-100 {
+    color: var(--clr-accent-100);
+}
+.text-neutral-100 {
+    color: var(--clr-neutral-100);
+}
+.text-neutral-900 {
+    color: var(--clr-neutral-900);
+}
+
+.bg-primary-400 {
+    background-color: var(--clr-primary-400);
+}
+.bg-accent-400 {
+    background-color: var(--clr-accent-400);
+}
+.bg-accent-100 {
+    background-color: var(--clr-accent-100);
+}
+.bg-neutral-100 {
+    background-color: var(--clr-neutral-100);
+}
+.bg-neutral-900 {
+    background-color: var(--clr-neutral-900);
+}
+
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-bold { font-weight: var(--fw-bold); }
+
+.fs-primary-heading {
+    font-size: var(--fs-700);
+}
+
+body {
+  padding-top: 25px;
+  font-weight: bold;
+  background-color: var(--clr-accent-400);
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-100);
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://source.unsplash.com/1920x1080?golfcourse);
+  filter: saturate(100%);
 }
 
 .portfolio-link {
-    padding: 5px;
-    display: flex;
-    position: absolute;
-    top: 50px;
-    left: 50px;
+  position: fixed;
+  left: 25px;
+  top: 25px;
 }
 .portfolio-btn {
-    border-radius: 35px;
-    border: none;
-    padding: 5px;
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    align-items: center;
-    outline: none;
-    background-color: #1515159b;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+  border-radius: 35px;
+  font-size: 10px;
+  border: none;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  align-items: center;
+  outline: none;
+  background-color: #1515159b;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 .portfolio-btn:hover {
-    background-color: #4646466b;
+  background-color: #4646466b;
 }
 
-.background {
-    display: flexbox;
-    position: sticky;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-    background-image: url(https://source.unsplash.com/1920x1080?golfcourse);
-    filter: saturate(100%);
-}
-
-input {
-    padding-left: 10px;
-    margin-bottom: -50px;
+.main-div {
+  padding-top: 20px;
+  display: flex;
+  grid-template-columns: 20;
+  width: 100%vh;
+  text-align: center;
+  justify-content: center;
 }
 
 .day-night {
-    position: fixed;
-    margin-top: -5px;
-    margin-left: -5px;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 25px;
 }
 
 #dnBtn {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 30px;
-    transform: 0.15s;
-    background-color: bisque;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  transform: 0.15s;
+  background-color: var(--clr-neutral-100);
 }
 #dnBtn:active {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .container {
-    display: inline-block;
-    position: relative;
-    align-items: center;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-    background-color: rgba(59, 62, 61, .80);
-    border-radius: 30px;
-    width: 650px;
-    height: 850px;
+  border-radius: 20px;
+  padding-top: 20px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 600px;
+  height: 840px;
+  background-color: rgba(5,56,107,.80);
 }
 
-.labels {
-    text-align: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 40px;
-    margin-right: 25px;
-}
-
-#holePar,
-#holeStroke {
-    width: 90px;
-    height: 25px;
-    margin: 5px;
-    background-color: rgb(171, 182, 178);
-}
-
+.labels,
 #scoreTxt {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 35px;
-    font-weight: bold;
+  font-family: Oleo Script Swash Caps;
+  font-size: 35px;
 }
 
-#scoreBtn,
-#resetBtn,
-#submitBtn {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 140px;
-    height: 60px;
-    background-color: rgb(76, 94, 88);
-    border: none;
-    border-radius: 4px;
-    color: bisque;
-    transition: 0.15s;
-    font-size: 25px;
-    font-weight: bold;
+input {
+  background-color: var(--clr-neutral-100);
+  border: none;
+  outline: none;
+  padding: 2.5px;
+  width: 160px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--clr-accent-400);
 }
-#scoreBtn:hover,
-#resetBtn:hover,
-#submitBtn:hover {
-    opacity: 0.9;
+
+.row-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  columns: 3;
 }
-#scoreBtn:active,
-#resetBtn:active,
-#submitBtn:active {
-    opacity: 0.7;
+.hole-rows {
+  width: 110px;
+}
+.stroke-rows {
+  width: 110px;
+}
+.stroke-score {
+  width: 110px;
 }
 
 .hole,
@@ -171,26 +279,36 @@ input {
 .score-sixteen,
 .score-seventeen,
 .score-eighteen {
-    padding: 5px;
-    font-size: 18px;
-    border: solid 1px;
-    min-width: 150px;
-    max-width: fit-content;
-    font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid var(--clr-neutral-900);
 }
 
-.row-container{
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-    column-count: 3;
+.lblDiv {
+  margin-bottom: 10px;
 }
-.hole-rows,
-.stroke-rows,
-.stroke-score {
-    align-items: center;
-    text-align: center;    
-    min-width: 100px;
-    max-width: fit-content;
+.inputDiv {
+  margin-bottom: 10px;
+}
+#parLbl {
+  margin-left: 40px;
+  margin-right: 60px;
+}
+#strokeLbl {
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+#scoreTxt {
+  margin-bottom: 10px;
+}
+
+button {
+  width: 125px;
+  height: 35px;
+  margin: 2.5px;
+  color: var(--clr-accent-400);
+  background-color: var(--clr-neutral-100);
+  border: none;
+  border-radius: 6px;
 }
